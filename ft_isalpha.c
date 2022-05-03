@@ -5,17 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 15:24:31 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/02 15:29:31 by jthuysba         ###   ########.fr       */
+/*   Created: 2022/05/03 11:58:05 by jthuysba          #+#    #+#             */
+/*   Updated: 2022/05/03 11:58:18 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
-    if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-        return (1);
-    else
-        return (0); 
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (1);
+	else
+		return (0);
 }
