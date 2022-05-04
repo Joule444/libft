@@ -6,9 +6,11 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 14:08:04 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/03 15:58:07 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/04 11:57:25 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {
@@ -18,9 +20,4 @@ size_t	ft_strlen(const char *str)
 	while (str[i])
 		i++;
 	return (i);
-}
-
-int main(void)
-{
-	printf("%ld", ft_strlen("Salut"));
 }

@@ -6,13 +6,11 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 14:20:55 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/03 16:26:18 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/04 11:56:51 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
