@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 17:23:34 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/06 12:25:50 by jthuysba         ###   ########.fr       */
+/*   Created: 2022/05/06 12:26:20 by jthuysba          #+#    #+#             */
+/*   Updated: 2022/05/06 12:47:02 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;
-	unsigned char	*ps;
+	unsigned char	*ss1;
+	unsigned char	*ss2;
 
 	i = 0;
-	ps = (unsigned char *)s;
+	ss1 = (unsigned char *)s1;
+	ss2 = (unsigned char *)s2;
 	while (i < n)
 	{
-		if (ps[i] == c)
-			return (ps + i);
+		if (ss1[i] != ss2[i])
+			return (ss1[i] - ss2[i]);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
 /*
 int main()
 {
-    char    s[50] = "Salut";
+    char    s1[50] = "Salut7";
+	char    s2[50] = "Salut6";
 
-    printf("%p\n", ft_memchr(s, 't', 5));
-    printf("%p", memchr(s, 't', 5));
+    printf("%d\n", ft_memcmp(s1, s2, 15));
+    printf("%d", memcmp(s1, s2, 15));
 }
 */

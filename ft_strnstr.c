@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 17:23:34 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/06 12:25:50 by jthuysba         ###   ########.fr       */
+/*   Created: 2022/05/06 14:26:17 by jthuysba          #+#    #+#             */
+/*   Updated: 2022/05/06 15:02:07 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
-	size_t			i;
-	unsigned char	*ps;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	ps = (unsigned char *)s;
-	while (i < n)
+	j = 0;
+	if (to_find[0] == '\0')
+		return ((char *)str);
+	while (str[i] && i < n)
 	{
-		if (ps[i] == c)
-			return (ps + i);
+		if (str[i] == to_find[0])
+		{
+			while (str[i + j] == to_find[j] && i + j < n)
+			{
+				if (to_find[j + 1] == '\0')
+					return ((char *)str + i);
+				j++;
+			}
+			j = 0;
+		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
-/*
-int main()
-{
-    char    s[50] = "Salut";
-
-    printf("%p\n", ft_memchr(s, 't', 5));
-    printf("%p", memchr(s, 't', 5));
-}
-*/
