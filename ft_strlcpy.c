@@ -1,27 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 15:59:54 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/04 14:41:14 by jthuysba         ###   ########.fr       */
+/*   Created: 2022/05/04 14:20:49 by jthuysba          #+#    #+#             */
+/*   Updated: 2022/05/04 16:13:48 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	size_t			i;
-	unsigned char	*ps;
+	size_t	i;
 
 	i = 0;
-	ps = s;
-	while (i < n)
+	if (size > 0)
 	{
-		ps[i] = 0;
-		i++;
+		while (i < size - 1)
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
+	return (ft_strlen(src));
 }
+/*
+int main ()
+{
+	char	s[10] = "salut";
+	char	d[10] = "sava?";
+	char	s1[10] = "salut";
+	char	d1[10] = "sava?";
+	printf("%ld\n", ft_strlcpy(d, s, 7));
+	printf("%ld\n", strlcpy(d1, s1, 7));
+	printf("%s\n", d);
+	printf("%s\n", d1);
+}
+*/

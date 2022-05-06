@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 14:20:55 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/04 11:56:51 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/04 14:56:47 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*ps;
 
 	i = 0;
