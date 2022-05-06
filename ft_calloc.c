@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 15:54:09 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/06 16:42:43 by jthuysba         ###   ########.fr       */
+/*   Created: 2022/05/06 16:52:12 by jthuysba          #+#    #+#             */
+/*   Updated: 2022/05/06 17:17:19 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_calloc(size_t n, size_t size)
 {
-	size_t	i;
+	int	*arr;
 
-	i = ft_strlen(s);
-	while (i != 0)
-	{
-		if (s[i] == c)
-			return ((char *)s + i);
-		i--;
-	}
-	return (NULL);
+	if (size && n > (size_t) - 1 / size)
+		return (0);
+	arr = (void *)malloc(n * size);
+	if (!arr)
+		return (NULL);
+	ft_bzero(arr, n * size);
+	return (arr);
 }
-/*
-int main ()
-{
-	char	s[15] = "Xalut a tous";
-	printf("%s", ft_strrchr(s, 'X'));
-}
-*/
