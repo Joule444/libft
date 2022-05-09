@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 17:47:29 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/07 19:03:35 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:16:44 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	dest[j + 1] = '\0';
 	return (dest);
 }
-/*
+
 int main(void)
 {
-	printf("%s", ft_strtrim("00test00","0"));
+	printf("%s", ft_strtrim("00test00","0test"));
 }
-*/
+

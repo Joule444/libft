@@ -1,47 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 17:30:01 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/09 16:11:57 by jthuysba         ###   ########.fr       */
+/*   Created: 2022/05/09 16:13:13 by jthuysba          #+#    #+#             */
+/*   Updated: 2022/05/09 17:12:22 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_itoa(int n)
 {
 	size_t	i;
-	size_t	j;
-	char	*dest;
+
 
 	i = 0;
-	j = 0;
-	dest = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!dest)
-		return (NULL);
-	while (s1[i])
+	if (n < 0)
 	{
-		dest[j] = s1[i];
+		str[i] = '-';
 		i++;
-		j++;
 	}
-	i = 0;
-	while (s2[i])
-	{
-		dest[j] = s2[i];
-		i++;
-		j++;
-	}
-	dest[j] = '\0';
-	return (dest);
+	while ()
 }
-/*
-int main()
-{
-	printf("%s\n", ft_strjoin("Bonsoir ", "a tous !"));
-}
-*/

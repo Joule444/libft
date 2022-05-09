@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:59:23 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/09 15:35:20 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/09 16:12:37 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ char	**ft_split(char const *s, char sep)
 {
 	size_t	i;
 	size_t	x;
-	size_t	y;
 	size_t	n;
 	char	**arr;
 
@@ -86,7 +85,7 @@ char	**ft_split(char const *s, char sep)
 	arr[x] = '\0';
 	return (arr);
 }
-
+/*
 int	main(void)
 {
 	char	**tab;
@@ -95,9 +94,5 @@ int	main(void)
 	printf("%s\n", tab[0]);
 	printf("%s\n", tab[1]);
 	printf("%s\n", tab[2]);
-	free(tab[0]);
-	free(tab[1]);
-	free(tab[2]);
-	free(tab[3]);
-	free(tab);
 }
+*/
