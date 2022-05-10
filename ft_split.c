@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:59:23 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/09 16:12:37 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/10 14:57:36 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,24 +62,24 @@ char	**ft_split(char const *s, char sep)
 {
 	size_t	i;
 	size_t	x;
-	size_t	n;
 	char	**arr;
 
 	i = 0;
 	x = 0;
-	n = 0;
 	arr = malloc(sizeof(char *) * count_words(s, sep) + 1);
+	if (!arr)
+		return (NULL);
 	while (s[i])
 	{
 		if (s[i] == sep)
 			i++;
 		else
 		{
-			n = count_char(s + i, sep);
-			arr[x] = malloc(sizeof(char) * n + 1);
-			copy_words(arr[x], s + i, sep);
-			x++;
-			i += n;
+			arr[x] = malloc(sizeof(char) * count_char(s + i, sep) + 1);
+			if (!arr[x])
+				return (NULL);
+			copy_words(arr[x++], s + i, sep);
+			i += count_char(s + i, sep);
 		}
 	}
 	arr[x] = '\0';
@@ -90,9 +90,12 @@ int	main(void)
 {
 	char	**tab;
 
-	tab = ft_split("_Bonjour_a_tous_", '_');
+	tab = ft_split("Bonjour_a_tous________comment_ca_va?", '_');
 	printf("%s\n", tab[0]);
 	printf("%s\n", tab[1]);
 	printf("%s\n", tab[2]);
+	printf("%s\n", tab[3]);
+	printf("%s\n", tab[4]);
+	printf("%s\n", tab[5]);
 }
 */
