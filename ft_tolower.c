@@ -6,13 +6,14 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 16:23:04 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/03 16:26:00 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/12 12:32:18 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	if (c < 65 || c > 90)
-		return (0);
-	return (c + 32);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	else
+		return (c);
 }
