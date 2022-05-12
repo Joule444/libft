@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:32:26 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/05 15:37:24 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/12 14:41:24 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	i = 0;
 	j = 0;
 	d = ft_strlen(dest);
-	if (size == 0)
-		return (ft_strlen(src));
+	if (size <= d)
+		return (ft_strlen(src) + size);
 	while (dest[i] != '\0' && i < size)
 		i++;
 	while (src[j] && i < size - 1)
@@ -32,7 +32,10 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		i++;
 	}
 	dest[i] = '\0';
-	return (d + ft_strlen(src));
+	if (size < d)
+		return (d + size);
+	else
+		return (d + ft_strlen(src));
 }
 /*
    int    main()

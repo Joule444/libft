@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 14:20:49 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/04 16:13:48 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/12 14:30:57 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	i = 0;
 	if (size > 0)
 	{
-		while (i < size - 1)
+		while (i < size - 1 && src[i])
 		{
 			dest[i] = src[i];
 			i++;

@@ -6,16 +6,16 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:13 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/10 13:53:59 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/12 16:28:26 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	nbr_len(int n)
+static size_t	nbr_len(long int n)
 {
 	size_t	i;
-	int		nb;
+	long int		nb;
 
 	nb = n;
 	i = 1;
@@ -29,51 +29,43 @@ size_t	nbr_len(int n)
 	return (i);
 }
 
-int	put_nbr(char *str, int n, size_t i)
+static void	put_nbr(char *str, long int n, size_t i)
 {
-	int	neg;
-
-	neg = 0;
-	if (n == -2147483648)
-	{
-		ft_strlcpy (str, "-2147483648", 12);
-		return (0);
-	}
-	if (n < 0)
-	{
-		n = n * -1;
-		neg = 1;
-	}
 	if (i > 0)
 		put_nbr(str, n / 10, --i);
 	str[i] = (n % 10) + '0';
-	return (neg);
 }
 
 char	*ft_itoa(int n)
 {
 	size_t	len;
+	long int	nb;
 	char	*str;
+	int	neg;
 
+	nb = n;
 	len = 0;
-	if (n < 0)
+	neg = 0;
+	if (nb < 0)
 		len++;
-	len += nbr_len(n);
-	str = malloc(sizeof(char) * len + 1);
-	if (put_nbr(str, n, len))
+	len += nbr_len(nb);
+	str = malloc(sizeof(char) * (len + 1));
+	ft_memset(str, 0, len + 1);
+	if (nb < 0)
+	{
+		neg = 1;
+		nb = nb * (-1);
+	}
+	put_nbr(str, nb, len);
+	if (neg)
 		str[0] = '-';
 	return (str);
 }
 /*
+#include <limits.h>
+
 int	main()
 {
-	printf("%s\n", ft_itoa(0));
-	printf("%s\n", ft_itoa(42));
-	printf("%s\n", ft_itoa(-42));
-	printf("%s\n", ft_itoa(-424545));
-	printf("%s\n", ft_itoa(424545));
-	printf("%s\n", ft_itoa(-2147483648));
-	printf("%s\n", ft_itoa(2147483647));
-
+	printf("%s\n", ft_itoa(INT_MIN));
 }
 */

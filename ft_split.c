@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:59:23 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/10 14:57:36 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/12 16:10:02 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	**ft_split(char const *s, char sep)
 
 	i = 0;
 	x = 0;
-	arr = malloc(sizeof(char *) * count_words(s, sep) + 1);
+	arr = malloc(sizeof(char *) * (count_words(s, sep) + 1));
 	if (!arr)
 		return (NULL);
 	while (s[i])
@@ -75,7 +75,7 @@ char	**ft_split(char const *s, char sep)
 			i++;
 		else
 		{
-			arr[x] = malloc(sizeof(char) * count_char(s + i, sep) + 1);
+			arr[x] = malloc(sizeof(char) * (count_char(s + i, sep) + 1));
 			if (!arr[x])
 				return (NULL);
 			copy_words(arr[x++], s + i, sep);

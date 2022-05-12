@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 14:58:37 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/10 15:38:23 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/12 16:36:47 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	i = 0;
 	while (s[i])
 	{
-		f(i, s);
+		f(i, s + i);
 		i++;
 	}
 }

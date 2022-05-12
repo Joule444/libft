@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:23:34 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/10 14:02:50 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/12 12:45:18 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	ps = (unsigned char *)s;
 	while (i < n)
 	{
-		if (ps[i] == c)
+		if (ps[i] == (unsigned char)c)
 			return (ps + i);
 		i++;
 	}
@@ -32,7 +32,7 @@ int main()
 {
     char    s[50] = "Salut";
 
-    printf("%p\n", ft_memchr(s, 't', 5));
-    printf("%p", memchr(s, 't', 5));
+    printf("%p\n", ft_memchr(s, 2 + 256, 3));
+    printf("%p", memchr(s, 2 + 256, 3));
 }
 */
