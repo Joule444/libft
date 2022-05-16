@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 12:38:45 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/13 16:50:10 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/16 11:32:44 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	int	a;
-
-	a = 0;
-	while (a < ft_lstsize(lst))
+	while (lst)
 	{
+		if (lst->next == NULL)
+			return (lst);
 		lst = lst->next;
-		a++;
 	}
 	return (lst);
 }

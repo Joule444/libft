@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 12:55:10 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/13 14:50:35 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/16 11:29:14 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		{
 			a = ft_lstlast(*lst);
 			a->next = new;
-			new->next = NULL;
-			a = new;
 		}
 		else
 			*lst = new;

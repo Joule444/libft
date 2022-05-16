@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:13 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/12 16:28:26 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:44:38 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static size_t	nbr_len(long int n)
 {
-	size_t	i;
-	long int		nb;
+	size_t		i;
+	long int	nb;
 
 	nb = n;
 	i = 1;
@@ -38,10 +38,10 @@ static void	put_nbr(char *str, long int n, size_t i)
 
 char	*ft_itoa(int n)
 {
-	size_t	len;
+	size_t		len;
 	long int	nb;
-	char	*str;
-	int	neg;
+	char		*str;
+	int			neg;
 
 	nb = n;
 	len = 0;

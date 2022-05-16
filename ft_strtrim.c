@@ -6,14 +6,14 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 17:47:29 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/12 16:05:33 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:54:35 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	check_str(char const *s, char const c)
+static int	check_str(char const *s, char const c)
 {
 	size_t	i;
 

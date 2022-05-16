@@ -6,13 +6,13 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:59:23 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/12 16:10:02 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:54:07 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_words(char const *s, char sep)
+static size_t	count_words(char const *s, char sep)
 {
 	size_t	i;
 	size_t	k;
@@ -35,7 +35,7 @@ size_t	count_words(char const *s, char sep)
 	return (words);
 }
 
-size_t	count_char(char const *s, char sep)
+static size_t	count_char(char const *s, char sep)
 {
 	size_t	i;
 
@@ -45,7 +45,7 @@ size_t	count_char(char const *s, char sep)
 	return (i);
 }
 
-void	copy_words(char *dest, const char *src, char sep)
+static void	copy_words(char *dest, const char *src, char sep)
 {
 	size_t	i;
 
@@ -82,7 +82,7 @@ char	**ft_split(char const *s, char sep)
 			i += count_char(s + i, sep);
 		}
 	}
-	arr[x] = '\0';
+	arr[x] = 0;
 	return (arr);
 }
 /*

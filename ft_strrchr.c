@@ -6,7 +6,7 @@
 /*   By: jthuysba <jthuysba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 15:54:09 by jthuysba          #+#    #+#             */
-/*   Updated: 2022/05/12 12:54:51 by jthuysba         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:20:06 by jthuysba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	if (ft_strlen(s) > 0)
 		i = ft_strlen(s) - 1;
 	if (c == 0)
 		return ((char *)s + ft_strlen(s));
-	while (s[i])
+	while (i >= 0)
 	{
 		if (s[i] == (unsigned char)c)
 			return ((char *)s + i);
@@ -30,9 +30,11 @@ char	*ft_strrchr(const char *s, int c)
 	return (NULL);
 }
 /*
+#include <stdio.h>
+
 int main ()
 {
-	char	s[15] = "Xalut a tous";
-	printf("%s", ft_strrchr(s, 't'));
+	char	s[15] = "bonjour";
+	printf("%s", ft_strrchr(s, 's'));
 }
 */
